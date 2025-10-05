@@ -1,0 +1,723 @@
+Script started on 2025-10-01 10:46:51+09:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="194" LINES="10"]
+[?2004h(base) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ source scripts/record.sh s
+[?2004l[sudo] password for son: 
+INFO 2025-10-01 10:47:01 t/record.py:297 {'dataset': {'episode_time_s': 180,
+             'fps': 30,
+             'num_episodes': 10,
+             'num_image_writer_processes': 0,
+             'num_image_writer_threads_per_camera': 4,
+             'private': False,
+             'push_to_hub': True,
+             'repo_id': 'JisooSong/sandwich_121to130_bslb',
+             'reset_time_s': 180,
+             'root': '/home/son/lerobotjs/datasets/sandwich_121to130_bslb',
+             'single_task': 'Stack the sandwich in the order of bread, steak, '
+                            'lettuce, and bread',
+             'tags': None,
+             'video': True,
+             'video_encoding_batch_size': 1},
+ 'display_data': False,
+ 'play_sounds': True,
+ 'policy': None,
+ 'resume': False,
+ 'robot': {'calibration_dir': None,
+           'cameras': {'front': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 6,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'left': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                'fps': 30,
+                                'height': 480,
+                                'index_or_path': 4,
+                                'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                'warmup_s': 1,
+                                'width': 640},
+                       'right': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 0,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'top': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                               'fps': 30,
+                               'height': 480,
+                               'index_or_path': 2,
+                               'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                               'warmup_s': 1,
+                               'width': 640}},
+           'id': 'dual_so101',
+           'left_arm_disable_torque_on_disconnect': True,
+           'left_arm_max_relative_target': None,
+           'left_arm_port': '/dev/ttyACM0',
+           'left_arm_use_degrees': False,
+           'right_arm_disable_torque_on_disconnect': True,
+           'right_arm_max_relative_target': None,
+           'right_arm_port': '/dev/ttyACM1',
+           'right_arm_use_degrees': False},
+ 'teleop': {'calibration_dir': None,
+            'id': 'dual_leader_so101',
+            'left_arm_port': '/dev/ttyACM2',
+            'right_arm_port': '/dev/ttyACM3'}}
+Traceback (most recent call last):
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/record.py"[0m, line [35m408[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/record.py"[0m, line [35m404[0m, in [35mmain[0m
+    [31mrecord[0m[1;31m()[0m
+    [31m~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/configs/parser.py"[0m, line [35m225[0m, in [35mwrapper_inner[0m
+    response = fn(cfg, *args, **kwargs)
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/record.py"[0m, line [35m301[0m, in [35mrecord[0m
+    robot = make_robot_from_config(cfg.robot)
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/robots/utils.py"[0m, line [35m63[0m, in [35mmake_robot_from_config[0m
+    return BiSO101Follower(config)
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/robots/bi_so101_follower/bi_so101_follower.py"[0m, line [35m65[0m, in [35m__init__[0m
+    self.left_arm = [31mSO101Follower[0m[1;31m(left_arm_config)[0m
+                    [31m~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/robots/so101_follower/so101_follower.py"[0m, line [35m49[0m, in [35m__init__[0m
+    self.bus = [31mFeetechMotorsBus[0m[1;31m([0m
+               [31m~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mport=self.config.port,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^[0m
+    ...<8 lines>...
+        [1;31mcalibration=self.calibration,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/son/lerobot_0914/lerobot/src/lerobot/motors/feetech/feetech.py"[0m, line [35m126[0m, in [35m__init__[0m
+    import scservo_sdk as scs
+[1;35mModuleNotFoundError[0m: [35mNo module named 'scservo_sdk'[0m
+[?2004h(base) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ conda activate lre[K[Kerobot
+[?2004l[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ conda activate lerobotsource scripts/record.sh s
+[?2004l^CTraceback (most recent call last):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 408, in <module>
+    main()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 404, in main
+    record()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/configs/parser.py", line 224, in wrapper_inner
+    cfg = draccus.parse(config_class=argtype, config_path=config_path, args=cli_args)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/argparsing.py", line 204, in parse
+    parser = ArgumentParser(
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/argparsing.py", line 73, in __init__
+    self._set_dataclass(config_class)  # type: ignore
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/argparsing.py", line 87, in _set_dataclass
+    new_wrapper.register_actions(parser=self.parser)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/dataclass_wrapper.py", line 69, in register_actions
+    child.register_actions(parser)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/choice_wrapper.py", line 208, in register_actions
+    child.register_actions(parser)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/choice_wrapper.py", line 83, in register_actions
+    child.register_actions(parser)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/dataclass_wrapper.py", line 69, in register_actions
+    child.register_actions(parser)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/dataclass_wrapper.py", line 71, in register_actions
+    child.add_action(group)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/field_wrapper.py", line 309, in add_action
+    logger.debug(f"Arg options for field '{self.name}': {self.arg_options}")
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/field_wrapper.py", line 85, in arg_options
+    options = self.get_arg_options()
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/field_wrapper.py", line 111, in get_arg_options
+    if self.help:
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/field_wrapper.py", line 258, in help
+    self._docstring = docstring.get_attribute_docstring(self.parent.dataclass, self.field.name)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/draccus/wrappers/docstring.py", line 63, in get_attribute_docstring
+    source = inspect.getsource(some_dataclass)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/inspect.py", line 1139, in getsource
+    lines, lnum = getsourcelines(object)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/inspect.py", line 1121, in getsourcelines
+    lines, lnum = findsource(object)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/inspect.py", line 969, in findsource
+    class_finder.visit(tree)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 426, in generic_visit
+    self.visit(item)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/inspect.py", line 910, in visit_FunctionDef
+    self.generic_visit(node)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 428, in generic_visit
+    self.visit(value)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 426, in generic_visit
+    self.visit(item)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/ast.py", line 423, in generic_visit
+    if isinstance(value, list):
+KeyboardInterrupt
+
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ source scripts/record.sh s[K[K
+[?2004lINFO 2025-10-01 10:47:21 t/record.py:297 {'dataset': {'episode_time_s': 180,
+             'fps': 30,
+             'num_episodes': 10,
+             'num_image_writer_processes': 0,
+             'num_image_writer_threads_per_camera': 4,
+             'private': False,
+             'push_to_hub': True,
+             'repo_id': 'JisooSong/sandwich_121to130_bslb',
+             'reset_time_s': 180,
+             'root': '/home/son/lerobotjs/datasets/sandwich_121to130_bslb',
+             'single_task': 'Stack the sandwich in the order of bread, steak, '
+                            'lettuce, and bread',
+             'tags': None,
+             'video': True,
+             'video_encoding_batch_size': 1},
+ 'display_data': False,
+ 'play_sounds': True,
+ 'policy': None,
+ 'resume': False,
+ 'robot': {'calibration_dir': None,
+           'cameras': {'front': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 6,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'left': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                'fps': 30,
+                                'height': 480,
+                                'index_or_path': 4,
+                                'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                'warmup_s': 1,
+                                'width': 640},
+                       'right': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 0,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'top': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                               'fps': 30,
+                               'height': 480,
+                               'index_or_path': 2,
+                               'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                               'warmup_s': 1,
+                               'width': 640}},
+           'id': 'dual_so101',
+           'left_arm_disable_torque_on_disconnect': True,
+           'left_arm_max_relative_target': None,
+           'left_arm_port': '/dev/ttyACM0',
+           'left_arm_use_degrees': False,
+           'right_arm_disable_torque_on_disconnect': True,
+           'right_arm_max_relative_target': None,
+           'right_arm_port': '/dev/ttyACM1',
+           'right_arm_use_degrees': False},
+ 'teleop': {'calibration_dir': None,
+            'id': 'dual_leader_so101',
+            'left_arm_port': '/dev/ttyACM2',
+            'right_arm_port': '/dev/ttyACM3'}}
+Traceback (most recent call last):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 408, in <module>
+    main()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 404, in main
+    record()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/configs/parser.py", line 225, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 324, in record
+    dataset = LeRobotDataset.create(
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/datasets/lerobot_dataset.py", line 1024, in create
+    obj.meta = LeRobotDatasetMetadata.create(
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/datasets/lerobot_dataset.py", line 316, in create
+    obj.root.mkdir(parents=True, exist_ok=False)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/home/son/lerobotjs/datasets/sandwich_121to130_bslb'
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ source scripts/record.sh
+[?2004lINFO 2025-10-01 10:48:20 t/record.py:297 {'dataset': {'episode_time_s': 180,
+             'fps': 30,
+             'num_episodes': 10,
+             'num_image_writer_processes': 0,
+             'num_image_writer_threads_per_camera': 4,
+             'private': False,
+             'push_to_hub': True,
+             'repo_id': 'JisooSong/sandwich_131to140_bslb',
+             'reset_time_s': 180,
+             'root': '/home/son/lerobotjs/datasets/sandwich_121to130_bslb',
+             'single_task': 'Stack the sandwich in the order of bread, steak, '
+                            'lettuce, and bread',
+             'tags': None,
+             'video': True,
+             'video_encoding_batch_size': 1},
+ 'display_data': False,
+ 'play_sounds': True,
+ 'policy': None,
+ 'resume': False,
+ 'robot': {'calibration_dir': None,
+           'cameras': {'front': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 6,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'left': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                'fps': 30,
+                                'height': 480,
+                                'index_or_path': 4,
+                                'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                'warmup_s': 1,
+                                'width': 640},
+                       'right': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 0,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'top': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                               'fps': 30,
+                               'height': 480,
+                               'index_or_path': 2,
+                               'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                               'warmup_s': 1,
+                               'width': 640}},
+           'id': 'dual_so101',
+           'left_arm_disable_torque_on_disconnect': True,
+           'left_arm_max_relative_target': None,
+           'left_arm_port': '/dev/ttyACM0',
+           'left_arm_use_degrees': False,
+           'right_arm_disable_torque_on_disconnect': True,
+           'right_arm_max_relative_target': None,
+           'right_arm_port': '/dev/ttyACM1',
+           'right_arm_use_degrees': False},
+ 'teleop': {'calibration_dir': None,
+            'id': 'dual_leader_so101',
+            'left_arm_port': '/dev/ttyACM2',
+            'right_arm_port': '/dev/ttyACM3'}}
+Traceback (most recent call last):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 408, in <module>
+    main()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 404, in main
+    record()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/configs/parser.py", line 225, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 324, in record
+    dataset = LeRobotDataset.create(
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/datasets/lerobot_dataset.py", line 1024, in create
+    obj.meta = LeRobotDatasetMetadata.create(
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/datasets/lerobot_dataset.py", line 316, in create
+    obj.root.mkdir(parents=True, exist_ok=False)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/home/son/lerobotjs/datasets/sandwich_121to130_bslb'
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ source scripts/record.sh
+[?2004lINFO 2025-10-01 10:49:20 t/record.py:297 {'dataset': {'episode_time_s': 180,
+             'fps': 30,
+             'num_episodes': 10,
+             'num_image_writer_processes': 0,
+             'num_image_writer_threads_per_camera': 4,
+             'private': False,
+             'push_to_hub': True,
+             'repo_id': 'JisooSong/sandwich_131to140_bslb',
+             'reset_time_s': 180,
+             'root': '/home/son/lerobotjs/datasets/sandwich_131to140_bslb',
+             'single_task': 'Stack the sandwich in the order of bread, steak, '
+                            'lettuce, and bread',
+             'tags': None,
+             'video': True,
+             'video_encoding_batch_size': 1},
+ 'display_data': False,
+ 'play_sounds': True,
+ 'policy': None,
+ 'resume': False,
+ 'robot': {'calibration_dir': None,
+           'cameras': {'front': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 6,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'left': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                'fps': 30,
+                                'height': 480,
+                                'index_or_path': 4,
+                                'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                'warmup_s': 1,
+                                'width': 640},
+                       'right': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 0,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'top': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                               'fps': 30,
+                               'height': 480,
+                               'index_or_path': 2,
+                               'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                               'warmup_s': 1,
+                               'width': 640}},
+           'id': 'dual_so101',
+           'left_arm_disable_torque_on_disconnect': True,
+           'left_arm_max_relative_target': None,
+           'left_arm_port': '/dev/ttyACM0',
+           'left_arm_use_degrees': False,
+           'right_arm_disable_torque_on_disconnect': True,
+           'right_arm_max_relative_target': None,
+           'right_arm_port': '/dev/ttyACM1',
+           'right_arm_use_degrees': False},
+ 'teleop': {'calibration_dir': None,
+            'id': 'dual_leader_so101',
+            'left_arm_port': '/dev/ttyACM2',
+            'right_arm_port': '/dev/ttyACM3'}}
+INFO 2025-10-01 10:49:20 follower.py:104 dual_so101_left SO101Follower connected.
+INFO 2025-10-01 10:49:20 follower.py:104 dual_so101_right SO101Follower connected.
+INFO 2025-10-01 10:49:22 a_opencv.py:179 OpenCVCamera(4) connected.
+INFO 2025-10-01 10:49:23 a_opencv.py:179 OpenCVCamera(2) connected.
+INFO 2025-10-01 10:49:24 a_opencv.py:179 OpenCVCamera(0) connected.
+INFO 2025-10-01 10:49:26 a_opencv.py:179 OpenCVCamera(6) connected.
+INFO 2025-10-01 10:49:26 01_leader.py:82 dual_leader_so101_left SO101Leader connected.
+Traceback (most recent call last):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 408, in <module>
+    main()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 404, in main
+    record()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/configs/parser.py", line 225, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 341, in record
+    teleop.connect()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/teleoperators/bi_so101_leader/bi_so101_leader.py", line 73, in connect
+    self.right_arm.connect(calibrate)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/teleoperators/so101_leader/so101_leader.py", line 81, in connect
+    self.configure()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/teleoperators/so101_leader/so101_leader.py", line 131, in configure
+    self.bus.write("Operating_Mode", motor, OperatingMode.POSITION.value)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/motors/motors_bus.py", line 1023, in write
+    self._write(addr, length, id_, value, num_retry=num_retry, raise_on_error=True, err_msg=err_msg)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/motors/motors_bus.py", line 1049, in _write
+    raise RuntimeError(f"{err_msg} {self.packet_handler.getRxPacketError(error)}")
+RuntimeError: Failed to write 'Operating_Mode' on id_=6 with '0' after 1 tries. [RxPacketError] Input voltage error!
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ source scripts/record.sh
+[?2004lINFO 2025-10-01 10:50:09 t/record.py:297 {'dataset': {'episode_time_s': 180,
+             'fps': 30,
+             'num_episodes': 10,
+             'num_image_writer_processes': 0,
+             'num_image_writer_threads_per_camera': 4,
+             'private': False,
+             'push_to_hub': True,
+             'repo_id': 'JisooSong/sandwich_131to140_bslb',
+             'reset_time_s': 180,
+             'root': '/home/son/lerobotjs/datasets/sandwich_131to140_bslb',
+             'single_task': 'Stack the sandwich in the order of bread, steak, '
+                            'lettuce, and bread',
+             'tags': None,
+             'video': True,
+             'video_encoding_batch_size': 1},
+ 'display_data': False,
+ 'play_sounds': True,
+ 'policy': None,
+ 'resume': False,
+ 'robot': {'calibration_dir': None,
+           'cameras': {'front': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 6,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'left': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                'fps': 30,
+                                'height': 480,
+                                'index_or_path': 4,
+                                'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                'warmup_s': 1,
+                                'width': 640},
+                       'right': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 0,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'top': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                               'fps': 30,
+                               'height': 480,
+                               'index_or_path': 2,
+                               'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                               'warmup_s': 1,
+                               'width': 640}},
+           'id': 'dual_so101',
+           'left_arm_disable_torque_on_disconnect': True,
+           'left_arm_max_relative_target': None,
+           'left_arm_port': '/dev/ttyACM0',
+           'left_arm_use_degrees': False,
+           'right_arm_disable_torque_on_disconnect': True,
+           'right_arm_max_relative_target': None,
+           'right_arm_port': '/dev/ttyACM1',
+           'right_arm_use_degrees': False},
+ 'teleop': {'calibration_dir': None,
+            'id': 'dual_leader_so101',
+            'left_arm_port': '/dev/ttyACM2',
+            'right_arm_port': '/dev/ttyACM3'}}
+INFO 2025-10-01 10:50:09 follower.py:104 dual_so101_left SO101Follower connected.
+INFO 2025-10-01 10:50:10 follower.py:104 dual_so101_right SO101Follower connected.
+INFO 2025-10-01 10:50:11 a_opencv.py:179 OpenCVCamera(4) connected.
+INFO 2025-10-01 10:50:12 a_opencv.py:179 OpenCVCamera(2) connected.
+INFO 2025-10-01 10:50:13 a_opencv.py:179 OpenCVCamera(0) connected.
+INFO 2025-10-01 10:50:15 a_opencv.py:179 OpenCVCamera(6) connected.
+INFO 2025-10-01 10:50:15 01_leader.py:82 dual_leader_so101_left SO101Leader connected.
+INFO 2025-10-01 10:50:15 01_leader.py:82 dual_leader_so101_right SO101Leader connected.
+INFO 2025-10-01 10:50:15 ls/utils.py:227 Recording episode 0
+^CTraceback (most recent call last):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 349, in record
+    record_loop(
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/datasets/image_writer.py", line 29, in wrapper
+    return func(*args, **kwargs)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 258, in record_loop
+    action = teleop.get_action()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/teleoperators/bi_so101_leader/bi_so101_leader.py", line 99, in get_action
+    right_action = self.right_arm.get_action()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/teleoperators/so101_leader/so101_leader.py", line 141, in get_action
+    action = self.bus.sync_read("Present_Position")
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/motors/motors_bus.py", line 1090, in sync_read
+    ids_values, _ = self._sync_read(
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/motors/motors_bus.py", line 1113, in _sync_read
+    comm = self.sync_reader.txRxPacket()
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/scservo_sdk/group_sync_read.py", line 81, in txRxPacket
+    return self.rxPacket()
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/scservo_sdk/group_sync_read.py", line 67, in rxPacket
+    self.data_dict[scs_id], result, _ = self.ph.readRx(self.port, scs_id, self.data_length)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/scservo_sdk/protocol_packet_handler.py", line 270, in readRx
+    rxpacket, result = self.rxPacket(port)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/scservo_sdk/protocol_packet_handler.py", line 112, in rxPacket
+    rxpacket.extend(port.readPort(wait_length - rx_length))
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/scservo_sdk/port_handler.py", line 59, in readPort
+    return self.ser.read(length)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/site-packages/serial/serialposix.py", line 565, in read
+    ready, _, _ = select.select([self.fd, self.pipe_abort_read_r], [], [], timeout.time_left())
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 408, in <module>
+    main()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 404, in main
+    record()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/configs/parser.py", line 225, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 345, in record
+    with VideoEncodingManager(dataset):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/datasets/video_utils.py", line 503, in __exit__
+    shutil.rmtree(img_dir)
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/shutil.py", line 731, in rmtree
+    onerror(os.rmdir, path, sys.exc_info())
+  File "/home/son/miniconda3/envs/lerobot/lib/python3.10/shutil.py", line 729, in rmtree
+    os.rmdir(path)
+OSError: [Errno 39] Directory not empty: '/home/son/lerobotjs/datasets/sandwich_131to140_bslb/images/observation.images.left/episode_000000'
+FATAL: exception not rethrown
+Aborted (core dumped)
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ source scripts/record.sh
+[?2004lINFO 2025-10-01 10:59:45 t/record.py:297 {'dataset': {'episode_time_s': 180,
+             'fps': 30,
+             'num_episodes': 10,
+             'num_image_writer_processes': 0,
+             'num_image_writer_threads_per_camera': 4,
+             'private': False,
+             'push_to_hub': True,
+             'repo_id': 'JisooSong/sandwich_131to140_bslb',
+             'reset_time_s': 180,
+             'root': '/home/son/lerobotjs/datasets/sandwich_131to140_bslb',
+             'single_task': 'Stack the sandwich in the order of bread, steak, '
+                            'lettuce, and bread',
+             'tags': None,
+             'video': True,
+             'video_encoding_batch_size': 1},
+ 'display_data': False,
+ 'play_sounds': True,
+ 'policy': None,
+ 'resume': False,
+ 'robot': {'calibration_dir': None,
+           'cameras': {'front': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 6,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'left': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                'fps': 30,
+                                'height': 480,
+                                'index_or_path': 4,
+                                'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                'warmup_s': 1,
+                                'width': 640},
+                       'right': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                                 'fps': 30,
+                                 'height': 480,
+                                 'index_or_path': 0,
+                                 'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                                 'warmup_s': 1,
+                                 'width': 640},
+                       'top': {'color_mode': <ColorMode.RGB: 'rgb'>,
+                               'fps': 30,
+                               'height': 480,
+                               'index_or_path': 2,
+                               'rotation': <Cv2Rotation.NO_ROTATION: 0>,
+                               'warmup_s': 1,
+                               'width': 640}},
+           'id': 'dual_so101',
+           'left_arm_disable_torque_on_disconnect': True,
+           'left_arm_max_relative_target': None,
+           'left_arm_port': '/dev/ttyACM0',
+           'left_arm_use_degrees': False,
+           'right_arm_disable_torque_on_disconnect': True,
+           'right_arm_max_relative_target': None,
+           'right_arm_port': '/dev/ttyACM1',
+           'right_arm_use_degrees': False},
+ 'teleop': {'calibration_dir': None,
+            'id': 'dual_leader_so101',
+            'left_arm_port': '/dev/ttyACM2',
+            'right_arm_port': '/dev/ttyACM3'}}
+INFO 2025-10-01 10:59:45 follower.py:104 dual_so101_left SO101Follower connected.
+INFO 2025-10-01 10:59:45 follower.py:104 dual_so101_right SO101Follower connected.
+INFO 2025-10-01 10:59:46 a_opencv.py:179 OpenCVCamera(4) connected.
+INFO 2025-10-01 10:59:47 a_opencv.py:179 OpenCVCamera(2) connected.
+INFO 2025-10-01 10:59:49 a_opencv.py:179 OpenCVCamera(0) connected.
+^CTraceback (most recent call last):
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 408, in <module>
+    main()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 404, in main
+    record()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/configs/parser.py", line 225, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/record.py", line 339, in record
+    robot.connect()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/robots/bi_so101_follower/bi_so101_follower.py", line 102, in connect
+    cam.connect()
+  File "/home/son/lerobot_0914/lerobot/src/lerobot/cameras/opencv/camera_opencv.py", line 177, in connect
+    time.sleep(0.1)
+KeyboardInterrupt
+
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ codn[K[Knda actia[Kvate r[Kgo[Kr00t
+[?2004l[?2004h(gr00t) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ sd[K[Kcd ~
+[?2004l[?2004h(gr00t) ]0;son@son: ~[01;32mson@son[00m:[01;34m~[00m$ cd[K[Kcd bi[K[KBi[K[Ki[KIsss[Ka[K[K[Ks[K[Kisa[K[K[Kis[K[K[K[K[Kis[Kd[K[Kcd l[KIsaac-GR00T-BiSO101/
+.git/               examples/           media/              shell/
+.github/            getting_started/    output/             tests/
+demo_data/          gr00t/              outputs/            
+deployment_scripts/ gr00t.egg-info/     scripts/            
+(gr00t) ]0;son@son: ~[01;32mson@son[00m:[01;34m~[00m$ cd Isaac-GR00T-BiSO101/
+[?2004l[?2004h(gr00t) ]0;son@son: ~/Isaac-GR00T-BiSO101[01;32mson@son[00m:[01;34m~/Isaac-GR00T-BiSO101[00m$ cd [K[K[Kbash cd Isaac-GR00T-BiSO101/~[Konda activate gr00tsource scripts/record.sh[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcondal[K activat e[K[Ke lerobot
+[?2004l[?2004h(lerobot) ]0;son@son: ~/Isaac-GR00T-BiSO101[01;32mson@son[00m:[01;34m~/Isaac-GR00T-BiSO101[00m$ cd ~
+[?2004l[?2004h(lerobot) ]0;son@son: ~[01;32mson@son[00m:[01;34m~[00m$ cd lerobot_00[K914/
+[?2004l[?2004h(lerobot) ]0;son@son: ~/lerobot_0914[01;32mson@son[00m:[01;34m~/lerobot_0914[00m$ cd src[K[K[Klerobot/
+[?2004l[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot[00m$ cd se[Krc/
+[?2004l[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot/src[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot/src[00m$ pt[Kython g[Kfine [K[Kd [K_cameras.py
+[?2004lpython: can't open file '/home/son/lerobot_0914/lerobot/src/find_cameras.py': [Errno 2] No such file or directory
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot/src[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot/src[00m$ cd lerobot
+[?2004l[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot/src/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot/src/lerobot[00m$ cd lerobotpython find_cameras.py
+[?2004l
+--- Detected Cameras ---
+Camera #0:
+  Name: OpenCV Camera @ /dev/video0
+  Type: OpenCV
+  Id: /dev/video0
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+Camera #1:
+  Name: OpenCV Camera @ /dev/video2
+  Type: OpenCV
+  Id: /dev/video2
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+Camera #2:
+  Name: OpenCV Camera @ /dev/video4
+  Type: OpenCV
+  Id: /dev/video4
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+Camera #3:
+  Name: OpenCV Camera @ /dev/video6
+  Type: OpenCV
+  Id: /dev/video6
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+/home/son/lerobot_0914/lerobot/src/lerobot/find_cameras.py:142: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+  img = Image.fromarray(img_array, mode="RGB")
+
+Finalizing image saving...
+Image capture finished. Images saved to outputs/captured_images
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot/src/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot/src/lerobot[00m$ [7mpython -m lerobot.find_camer[27m[7ma[27m[7ms opencv[27m[A(lerobot) ]0;son@son: ~/lerobot_0914/lerobot/src/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot/src/lerobot[00m$ python -m lerobot.find_cameras opencv
+[?2004l
+--- Detected Cameras ---
+Camera #0:
+  Name: OpenCV Camera @ /dev/video0
+  Type: OpenCV
+  Id: /dev/video0
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+Camera #1:
+  Name: OpenCV Camera @ /dev/video2
+  Type: OpenCV
+  Id: /dev/video2
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+Camera #2:
+  Name: OpenCV Camera @ /dev/video4
+  Type: OpenCV
+  Id: /dev/video4
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+Camera #3:
+  Name: OpenCV Camera @ /dev/video6
+  Type: OpenCV
+  Id: /dev/video6
+  Backend api: V4L2
+  Default stream profile:
+    Format: 0.0
+    Width: 640
+    Height: 480
+    Fps: 30.0
+--------------------
+/home/son/lerobot_0914/lerobot/src/lerobot/find_cameras.py:142: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+  img = Image.fromarray(img_array, mode="RGB")
+^C
+Finalizing image saving...
+Image capture finished. Images saved to outputs/captured_images
+[?2004h(lerobot) ]0;son@son: ~/lerobot_0914/lerobot/src/lerobot[01;32mson@son[00m:[01;34m~/lerobot_0914/lerobot/src/lerobot[00m$ [K(lerobot) ]0;son@son: ~/lerobot_0914/lerobot/src/lerobot[01;32mson@son[00m:[01;34m~/lero
